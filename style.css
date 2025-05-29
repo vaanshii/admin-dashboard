@@ -4,8 +4,8 @@
 	--secondary-clr: #1992d4;
 	--outline-clr: #f0b429;
 	--main-font: "Open Sans", sans-serif;
-    --icon-size: 1.7rem;
-    --avatar-size: 3rem;
+	--icon-size: 1.7rem;
+	--avatar-size: 3rem;
 }
 
 body {
@@ -16,7 +16,7 @@ body {
 .container {
 	display: grid;
 	grid-template-columns: minmax(300px, 1fr) minmax(700px, 5fr);
-	grid-template-rows: minmax(100px, 200px) minmax(600px, 1fr);
+	grid-template-rows: minmax(100px, 180px) minmax(600px, 1fr);
 	grid-template-areas:
 		"sidebar nav"
 		"sidebar main";
@@ -25,7 +25,6 @@ body {
 .navbar {
 	background-color: var(--primary-clr);
 	grid-area: nav;
-
 	display: grid;
 	grid-template-columns: minmax(300px, 3fr) minmax(200px, 1fr);
 	grid-template-rows: minmax(40px, 80px) minmax(50px, 100px);
@@ -56,8 +55,8 @@ body {
 	.user-nav {
 		grid-area: user-nav;
 		display: flex;
-        align-items: center;
-        gap: 2rem;
+		align-items: center;
+		gap: 2rem;
 
 		img:first-child {
 			width: var(--icon-size);
@@ -68,15 +67,63 @@ body {
 			height: var(--avatar-size);
 		}
 
-        p {
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
+		p {
+			font-size: 1.3rem;
+			font-weight: 700;
+		}
 	}
 
 	.banner {
 		background-color: var(--primary-clr);
 		grid-area: banner;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 300px;
+
+		.greeting-container {
+			display: grid;
+			grid-template-columns: 1fr 5fr;
+			grid-template-rows: 50px 50px;
+			grid-template-areas:
+				"avatar greet"
+				"avatar name";
+			gap: 0 20px;
+			margin-left: 40px;
+			min-width: 500px;
+
+			img {
+				width: auto;
+				height: 5rem;
+				grid-area: avatar;
+				align-self: center;
+			}
+
+			p {
+				grid-area: greet;
+				align-content: end;
+				font-weight: 600;
+			}
+
+			h1 {
+				grid-area: name;
+				font-size: 1.3rem;
+			}
+		}
+
+		.action-button-container {
+			align-content: center;
+			margin-left: 130px;
+			min-width: 500px;
+
+			button {
+				border: none;
+				background-color: var(--secondary-clr);
+				color: var(--primary-clr);
+				padding: 8px 2rem;
+				border-radius: 20px;
+				margin-right: 1.5rem;
+			}
+		}
 	}
 }
 
