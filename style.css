@@ -3,6 +3,7 @@
 	--primary-clr-300: #e2e8f0;
 	--secondary-clr: #1992d4;
 	--outline-clr: #f0b429;
+	--sub-text-clr: #5c5c5c;
 	--main-font: "Open Sans", sans-serif;
 	--icon-size: 1.7rem;
 	--avatar-size: 3rem;
@@ -185,32 +186,106 @@ body {
 	grid-area: main;
 	background-color: var(--primary-clr-300);
 	display: grid;
-	grid-template-columns: minmax(400px, 3fr) minmax(200px, 1fr);
+	grid-template-columns: minmax(400px, 3fr) minmax(200px, 1.3fr);
 	grid-template-rows: minmax(400px, 1fr) minmax(400px, 1.5fr);
 	grid-template-areas:
 		"project announcement"
 		"project trending";
 
-	gap: 2rem; /* FIX THIS GAP WAUHDAASJ*/
-	
 	.main-project-section {
 		grid-area: project;
+		margin-top: 2rem;
+		margin-left: 2rem;
+
+		h1 {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
 
 		.projects-container {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, 500px);
+			gap: 2rem;
 
 			.project-card {
 				background-color: var(--primary-clr);
+				border-left: 10px solid var(--outline-clr);
+				border-radius: 12px;
+
+				display: grid;
+				grid-template-rows: 0.5fr 1fr 1fr;
+
+				> * {
+					/* Selecting all direct child */
+					margin-left: 2rem;
+				}
+
+				h2 {
+					margin-top: 2rem;
+				}
+
+				p {
+					color: var(--sub-text-clr);
+					font-weight: 600;
+					max-width: 440px;
+				}
+
+				.quick-controls {
+					margin-right: 2.5rem;
+					justify-self: end;
+
+					display: flex;
+					gap: 2rem;
+
+					img {
+						width: var(--icon-size);
+					}
+				}
 			}
 		}
 	}
 
 	.announcement-section {
 		grid-area: announcement;
+		margin-top: 2rem;
+		margin-right: 2.5rem;
+
+		h1 {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+
+		.announcement-box {
+			background-color: var(--primary-clr);
+			padding: 2rem;
+			border-radius: 12px;
+		}
+
+		p {
+			color: var(--sub-text-clr);
+			font-weight: 600;
+		}
+
+		hr {
+			margin-top: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
 	}
 
 	.trending-section {
 		grid-area: trending;
+		margin-top: 2rem;
+		margin-right: 2.5rem;
+
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		.trending-box {
+			background-color: var(--primary-clr);
+			padding: 2rem;
+			border-radius: 12px;
+		}
+		
 	}
 }
