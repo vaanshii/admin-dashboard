@@ -279,13 +279,49 @@ body {
 
 		h1 {
 			font-size: 1.5rem;
+			margin-bottom: 1rem;
 		}
 
 		.trending-box {
 			background-color: var(--primary-clr);
 			padding: 2rem;
 			border-radius: 12px;
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
 		}
-		
+
+		.trending-list {
+			display: grid;
+			grid-template-columns: 1fr 5fr;
+			grid-template-rows: 1fr 1fr;
+			grid-template-areas:
+				"avatar user"
+				"avatar project";
+
+			img {
+				grid-area: avatar;
+			}
+
+			p:nth-child(2) {
+				grid-area: user;
+				font-weight: 700;
+			}
+
+			p:last-child {
+				grid-area: project;
+				color: var(--sub-text-clr);
+				font-weight: 600;
+			}
+		}
 	}
+}
+
+/*For box-shadows*/
+.project-card,
+.announcement-box,
+.trending-box {
+	box-shadow: 9px 9px 5px -5px rgba(0, 0, 0, 0.19);
+	-webkit-box-shadow: 9px 9px 5px -5px rgba(0, 0, 0, 0.19);
+	-moz-box-shadow: 9px 9px 5px -5px rgba(0, 0, 0, 0.19);
 }
