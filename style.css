@@ -182,6 +182,35 @@ body {
 }
 
 .main-dashboard {
-	background-color: var(--primary-clr-300);
 	grid-area: main;
+	background-color: var(--primary-clr-300);
+	display: grid;
+	grid-template-columns: minmax(400px, 3fr) minmax(200px, 1fr);
+	grid-template-rows: minmax(400px, 1fr) minmax(400px, 1.5fr);
+	grid-template-areas:
+		"project announcement"
+		"project trending";
+
+	gap: 2rem; /* FIX THIS GAP WAUHDAASJ*/
+	
+	.main-project-section {
+		grid-area: project;
+
+		.projects-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, 500px);
+
+			.project-card {
+				background-color: var(--primary-clr);
+			}
+		}
+	}
+
+	.announcement-section {
+		grid-area: announcement;
+	}
+
+	.trending-section {
+		grid-area: trending;
+	}
 }
