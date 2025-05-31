@@ -46,6 +46,9 @@ body {
 		"search-bar user-nav"
 		"banner banner";
 
+	position: sticky;
+	top: 0;
+
 	.search-bar-container {
 		grid-area: search-bar;
 		display: flex;
