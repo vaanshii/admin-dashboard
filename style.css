@@ -92,7 +92,7 @@ body {
 		grid-area: banner;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 300px;
+		justify-content: center;
 
 		.greeting-container {
 			display: grid;
@@ -126,8 +126,10 @@ body {
 
 		.action-button-container {
 			align-content: center;
-			margin-left: 130px;
-			min-width: 500px;
+			justify-self: center;
+			
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
 
 			button {
 				border: none;
@@ -192,7 +194,7 @@ body {
 	background-color: var(--primary-clr-300);
 	display: grid;
 	grid-template-columns: minmax(400px, 3fr) minmax(200px, 1.3fr);
-	grid-template-rows: minmax(400px, 1fr) minmax(400px, 1.5fr);
+	grid-template-rows: minmax(400px, 1fr) minmax(400px, 0.9fr);
 	grid-template-areas:
 		"project announcement"
 		"project trending";
