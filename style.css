@@ -46,9 +46,6 @@ body {
 		"search-bar user-nav"
 		"banner banner";
 
-	position: sticky;
-	top: 0;
-
 	.search-bar-container {
 		grid-area: search-bar;
 		display: flex;
@@ -149,16 +146,21 @@ body {
 	grid-area: sidebar;
 	color: var(--primary-clr);
 
+	> * { /* Makes the sidebar unscrollable*/
+		position: fixed;
+	}
+
 	.title-container {
 		margin-left: var(--sidebar-left-margin);
 		margin-top: 1.5rem;
 		display: flex;
 		gap: 1rem;
+		position: fixed;
 	}
 
 	.links-container {
 		margin-left: 2.6rem;
-		margin-top: 2rem;
+		margin-top: 7rem;
 		display: flex;
 		flex-direction: column;
 		gap: 70px;
